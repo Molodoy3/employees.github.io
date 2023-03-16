@@ -176,7 +176,8 @@ h6 {
 }
 
 .employees__item {
-  border: 1px solid #EEEEEE;
+  border: 0.0625rem solid #EEEEEE;
+  border-top: 0.125rem solid #FF0404;
   padding: 1.5rem 1.25rem;
 }
 

@@ -58,7 +58,8 @@ $maxWidthContainer: 1440; //ширина макета //?Заполнить
     }
 
     &__item {
-        border: 1px solid #EEEEEE;
+        border: rem(1) solid #EEEEEE;
+        border-top: rem(2) solid #FF0404;
         padding: rem(24) rem(20);
         @media (max-width: $md3){
             padding: rem(18) rem(10);
