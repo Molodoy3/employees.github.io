@@ -1,0 +1,210 @@
+/*Подключение функций, миксинов /=============================================================================*/
+@use 'sass:math';
+@import 'functions';
+/*=============================================================================================================*/
+/*Подключение шрифтов /=============================================================================*/
+@import 'fonts.scss';
+/*=============================================================================================================*/
+/*Размер шрифта по умолчанию /=============================================================================*/
+$mainFontSize: 16; //?Заполнить
+/*=============================================================================================================*/
+/*Контейнер и сетка /=============================================================================*/
+$mw: 1200; //?Заполнить
+$minwidth: rem(320);
+$md1: rem($mw+12);
+$md2: rem(992.98);
+$md3: rem(767.98);
+$md4: rem(479.98);
+
+.container {
+    max-width: rem($mw);
+    margin: 0 auto;
+    padding: 0 rem(10);
+    width: 100%;
+}
+
+/* .container{max-width: $mw; margin: 0 auto; width: 100%;
+    @media (max-width: $md1){max-width: 970px;}
+    @media (max-width: $md2){max-width: 750px;}
+    @media (max-width: $md3){max-width: 470px; padding: 0 10px;}
+    @media (max-width: $md4){max-width: 100%; padding: 0 10px;}
+} */
+/*=============================================================================================================*/
+/*Иконочный шрифт /=============================================================================*/
+/* @import 'icons'; */
+/*=============================================================================================================*/
+/*Обнуление /=============================================================================*/
+@import 'null';
+/*=============================================================================================================*/
+/*Переменные для адаптивного свойства /=============================================================================*/
+$maxWidth: 1920; //макс ширина
+$maxWidthContainer: 1440; //ширина макета //?Заполнить
+/*=============================================================================================================*/
+/*Основные цвета /=============================================================================*/
+
+/*=============================================================================================================*/
+/*Основные стили /=============================================================================*/
+
+.employees {
+    font-family: 'Axiforma';
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+        gap: rem(30);
+        align-items: flex-start;
+    }
+
+    &__item {
+        border: 1px solid #EEEEEE;
+        padding: rem(24) rem(20);
+        @media (max-width: $md3){
+            padding: rem(18) rem(10);
+        }
+        &>*{
+            &:not(:last-child) {
+                margin-bottom: rem(24);
+            }
+        }
+    }
+
+    &__category {
+        text-align: center;
+        font-weight: 700;
+        font-size: rem(32);
+        line-height: 140%;
+        text-transform: uppercase;
+        margin-bottom: em(41, 32);
+        @media (max-width: $md3){
+            font-size: rem(24);
+        }
+        span{
+            position: relative;
+            &::after{
+                content:'';
+                position: absolute;
+                width: 100%;
+                background-color: #FF0404;
+                bottom: rem(-18);
+                left: 0;
+                height: rem(7.3);
+            }
+        }
+    }
+
+    &__images {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__image {
+        &_displaced{
+            margin-right: rem(-38);
+            z-index: 2;
+        }
+        border-radius: 50%;
+        flex: 0 0 rem(150);
+        height: rem(150);
+        position: relative;
+        overflow: hidden;
+        border: rem(3) solid #ffffff;
+        img{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        text-align: center;
+        &>*{
+            &:not(:last-child) {
+                margin-bottom: rem(6);
+            }
+        }
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: rem(20);
+        line-height: 140%;
+    }
+
+    &__profession {
+        color: #969696;
+        line-height: 140%;
+        font-size: rem(18);
+    }
+
+    &__time-schedule {
+        color: #969696;
+        line-height: 140%;
+        font-size: rem(18);
+    }
+
+    &__contacts {
+
+    }
+
+    &__buttons {}
+
+    &__button {
+        display: block;
+        width: 100%;
+        color: inherit;
+        text-align: center;
+        background-color: #EEEEEE;
+        padding: rem(12) rem(10);
+        font-weight: 700;
+        line-height: 140%;
+        text-transform: uppercase;
+        @media (any-hover: hover) {
+            transition: background-color 0.4s, color 0.4s;
+            &:hover{
+                background-color: #000;
+                color: #fff;
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: rem(2);
+        }
+    }
+}
+
+.contacts-employees {
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__label {
+        font-size: rem(14);
+        line-height: 140%;
+        color: #969696;
+        margin-bottom: em(10, 14);
+    }
+
+    &__link {
+        display: inline-flex;
+        column-gap: rem(16);
+        font-size: rem(24);
+        color: inherit;
+        line-height: 140%;
+        @media (any-hover: hover) {
+            transition: color 0.3s;
+            &:hover{
+                color: #FF0404;
+            }
+        }
+    }
+
+    &__icon-watsApp{
+        flex: 0 0 rem(31.75);
+    }
+}
