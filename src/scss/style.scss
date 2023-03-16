@@ -15,7 +15,9 @@ $md1: rem($mw+12);
 $md2: rem(992.98);
 $md3: rem(767.98);
 $md4: rem(479.98);
-
+body{
+    padding: rem(50) 0;
+}
 .container {
     max-width: rem($mw);
     margin: 0 auto;
